@@ -68,7 +68,6 @@
             font-size: 1.5rem;
         }
 
-        /* Photo Gallery Grid */
         .photo-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -82,12 +81,6 @@
             padding: 15px;
             border-radius: 12px;
             text-align: center;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .photo-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
         }
 
         .photo-card img {
@@ -107,7 +100,6 @@
             font-style: italic;
         }
 
-        /* Demos Section Grid */
         .demos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -121,22 +113,8 @@
             padding: 20px;
             border-radius: 12px;
             text-align: center;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .demo-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .demo-card p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin: 14px 0 0 0;
-            font-style: italic;
-        }
-
-        /* Scrollable Live Chat Simulator Widget */
         .chat-simulator {
             background: #ffffff;
             border: 1px solid #e1e4e8;
@@ -157,7 +135,6 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            flex-shrink: 0;
         }
 
         .chat-header span {
@@ -200,7 +177,6 @@
             border-bottom-left-radius: 3px;
         }
 
-        /* Map Container with Perfectly Sized & Positioned Pin */
         .map-container {
             position: relative;
             width: 100%;
@@ -259,7 +235,6 @@
             animation: pulseGlow 1.5s infinite ease-in-out;
         }
 
-        /* Google Review QR Loop Widget Using MCQR.png */
         .qr-simulator {
             background: #ffffff;
             border: 1px solid #e1e4e8;
@@ -285,31 +260,12 @@
             justify-content: center;
             overflow: hidden;
             cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-
-        .qr-img-container:hover {
-            transform: scale(1.03);
         }
 
         .qr-img-container img {
             width: 100%;
             height: 100%;
             object-fit: contain;
-        }
-
-        .qr-simulator h4 {
-            margin: 4px 0 2px 0;
-            color: var(--primary);
-            font-size: 0.95rem;
-        }
-
-        .qr-simulator p {
-            margin: 0;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            font-style: normal !important;
-            line-height: 1.3;
         }
 
         .qr-btn {
@@ -321,4 +277,220 @@
             font-size: 0.75rem;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.2s ease;
+        }
+
+        @keyframes bouncePin {
+            0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+            50% { transform: translate(-50%, -50%) translateY(-5px); }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.3); opacity: 0.2; }
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .team-card {
+            background: #fafbfc;
+            border: 1px solid #eaeaea;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .role {
+            font-weight: bold;
+            color: var(--accent);
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .deliverables-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .deliverables-list li {
+            background: #fafbfc;
+            border: 1px solid #eaeaea;
+            padding: 20px 24px;
+            margin-bottom: 14px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .deliverable-info {
+            flex: 1;
+        }
+
+        .deliverable-title {
+            display: block;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .status-badge {
+            background-color: #eef2f7;
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>DICT ILCDB SPARK Program Portfolio</h1>
+        <p>Digital Marketing Scholars & Client Growth Suite — M&C Bakehouse</p>
+    </header>
+
+    <main>
+        <section id="overview">
+            <h2>Overview & Team Collaboration</h2>
+            <p>As part of the DICT ILCDB SPARK Program, our multidisciplinary team partnered with local enterprises in Iloilo City to help digitize their businesses through direct client consultations, diagnosing growth bottlenecks and delivering tailored recommendations, enhanced local discoverability, customer inquiry automation, and structured content creation strategies.</p>
+            
+            <div class="photo-gallery">
+                <div class="photo-card">
+                    <img src="ditc.jpg" alt="DICT SPARK Scholars Team">
+                    <p>DICT ILCDB SPARK Program Digital Marketing Scholars Team</p>
+                </div>
+                <div class="photo-card">
+                    <img src="mcbakehouse.jpg" alt="M&C Bakehouse Client Collaboration">
+                    <p>On-site strategy session with the M&C Bakehouse Owner.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="team">
+            <h2>The Digital Marketing Scholars</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <h3>Ed Ruel Brasileño</h3>
+                    <div class="role">Account Lead</div>
+                    <p>Manages the client relationship pipeline, project kickoff, client intake summaries, and presentation & Build Sheet approvals.</p>
+                </div>
+
+                <div class="team-card">
+                    <h3>Julito Petinglay Jr.</h3>
+                    <div class="role">Brand Lead</div>
+                    <p>Drives brand examinations, brand foundation systems, 1-page brand tone guides, and logo optimizations for premium client deployment.</p>
+                </div>
+
+                <div class="team-card">
+                    <h3>Jane Carl Macaspac</h3>
+                    <div class="role">Data Lead</div>
+                    <p>Leads search examination audits, clinic diagnosis reports, local competitor mapping, and data-driven visibility insights.</p>
+                </div>
+
+                <div class="team-card">
+                    <h3>Katrina Naig</h3>
+                    <div class="role">Content Lead</div>
+                    <p>Leads channel examinations, question-backed content pillars, repurposed asset packs, and live Build Day campaign storytelling.</p>
+                </div>
+
+                <div class="team-card">
+                    <h3>Princess Sweden Shane Parreno</h3>
+                    <div class="role">Community Lead & CoS</div>
+                    <p>Designs interactive member loyalty touchpoints, the Member Experience & Feedback Form, FAQ Guide, and Social Engagement Playbook.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="interactive-demos">
+            <h2>Interactive Systems & Digital Demos</h2>
+            <p>A closer look at the automated engagement, local search visibility, and offline-to-online review loops deployed for M&C Bakehouse.</p>
+            
+            <div class="demos-grid">
+                <div class="demo-card">
+                    <div class="chat-simulator">
+                        <div class="chat-header">
+                            <span></span> M&C Bakehouse Messenger (Automated)
+                        </div>
+                        <div class="chat-body">
+                            <div class="chat-bubble user">Hello! Open po ba kayo ngayon?</div>
+                            <div class="chat-bubble bot">Hello! Yes po! Open kami daily from 9 AM to 5 PM sa Lopez Jaena St. 🥖✨</div>
+                            <div class="chat-bubble user">Pano umorder ng Almond Biscocho?</div>
+                            <div class="chat-bubble bot">Maaari po kayong mag-order direkta sa aming Lazada store! Heto po ang link: lazada.com.ph/mcbakehouse 😊</div>
+                        </div>
+                    </div>
+                    <p>Scrollable simulation of the 24/7 automated Messenger FAQ and order routing workflow.</p>
+                </div>
+
+                <div class="demo-card">
+                    <div class="map-container">
+                        <img src="image_12af1b.png" alt="Google Business Profile Map Optimization">
+                        <div class="animated-pin">
+                            <div class="pin-icon"></div>
+                            <div class="pin-glow"></div>
+                        </div>
+                    </div>
+                    <p style="margin-top: 14px;">Optimized Google Business Profile map pin highlighting the verified M&C Bakehouse location along Lopez Jaena St.</p>
+                </div>
+
+                <div class="demo-card">
+                    <div class="qr-simulator">
+                        <div class="qr-img-container" onclick="window.open('https://www.google.com/maps/place//@10.7270011,122.5561256,17z/data=!3m1!4b1!4m3!3m2!1s0x33aee59911369e21:0xc3f0745058ed2974!12e1?entry=ttu', '_blank')">
+                            <img src="MCQR.png" alt="M&C Bakehouse Google Review QR Code">
+                        </div>
+                        <div>
+                            <h4>Scan to Rate on Google</h4>
+                            <p style="margin: 0; font-size: 0.75rem; color: #666;">Turn walk-in foot traffic into 5-star digital advocates instantly.</p>
+                        </div>
+                        <button class="qr-btn" onclick="window.open('https://www.google.com/maps/place//@10.7270011,122.5561256,17z/data=!3m1!4b1!4m3!3m2!1s0x33aee59911369e21:0xc3f0745058ed2974!12e1?entry=ttu', '_blank')">Simulate QR Scan</button>
+                    </div>
+                    <p style="margin-top: 14px;">Offline-to-Online (O2O) review generation loop bridging in-store foot traffic to Google Maps.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <h2>Key Deliverables & Slide Presentations</h2>
+            <ul class="deliverables-list">
+                <li>
+                    <div class="deliverable-info">
+                        <span class="deliverable-title">Diagnosis & Build Sheet Deck</span>
+                        <p style="margin:0; font-size:0.9rem; color:#666;">Comprehensive digital audit, local search gap analysis, and 5-day implementation roadmap.</p>
+                    </div>
+                    <a href="https://docs.google.com/presentation/d/1fWg0zwI_dWWt6dHLZSb3nEiDP1WOOuhuy-wU6ibkQYY/edit?usp=sharing" target="_blank" style="color:#e94560; font-weight:600; text-decoration:none;">View &rarr;</a>
+                </li>
+                <li>
+                    <div class="deliverable-info">
+                        <span class="deliverable-title">Local Search & GBP Optimization Audit</span>
+                        <p style="margin:0; font-size:0.9rem; color:#666;">Google Business Profile claiming, Lopez Jaena St. map pin verification, and NAP consistency checks.</p>
+                    </div>
+                    <span class="status-badge">Delivered</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 DICT ILCDB SPARK Program Portfolio Collective. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
