@@ -159,22 +159,66 @@
         .deliverables-list li {
             background: #fafbfc;
             border: 1px solid #eaeaea;
-            padding: 15px 20px;
-            margin-bottom: 12px;
+            padding: 20px 24px;
+            margin-bottom: 14px;
             border-radius: 8px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 20px;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .deliverables-list li:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .deliverable-info {
+            flex: 1;
+        }
+
+        .deliverable-title {
+            display: block;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .deliverable-desc {
+            margin: 0;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.5;
         }
 
         .deliverables-list a {
             color: var(--accent);
             text-decoration: none;
             font-weight: 600;
+            white-space: nowrap;
         }
 
         .deliverables-list a:hover {
             text-decoration: underline;
+        }
+
+        .status-badge {
+            background-color: #eef2f7;
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 600px) {
+            .deliverables-list li {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
         }
 
         footer {
@@ -252,28 +296,7 @@
             <h2>Key Deliverables & Slide Presentations</h2>
             <ul class="deliverables-list">
                 <li>
-                    <span><strong>Diagnosis & Build Sheet Deck</strong></span>
-                    <a href="https://docs.google.com/presentation/d/1fWg0zwI_dWWt6dHLZSb3nEiDP1WOOuhuy-wU6ibkQYY/edit?usp=sharing" target="_blank">View Presentation &rarr;</a>
-                </li>
-                <li>
-                    <span><strong>Task 44:</strong> Rebuilt Slide Presentation</span>
-                    <span style="color: #888; font-size: 0.9rem;">Completed</span>
-                </li>
-                <li>
-                    <span><strong>Task 47:</strong> Platform Choice Memo (M&C Bakehouse)</span>
-                    <span style="color: #888; font-size: 0.9rem;">Completed</span>
-                </li>
-                <li>
-                    <span><strong>Task 48:</strong> Social and Engagement Playbook (M&C Bakehouse)</span>
-                    <span style="color: #888; font-size: 0.9rem;">Completed</span>
-                </li>
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 DICT ILCDB SPARK Program Portfolio Collective. All rights reserved.</p>
-    </footer>
-
-</body>
-</html>
+                    <div class="deliverable-info">
+                        <span class="deliverable-title">Diagnosis & Build Sheet Deck</span>
+                        <p class="deliverable-desc">Comprehensive digital audit, local search gap analysis, bottleneck diagnosis, and 5-day implementation roadmap for M&C Bakehouse.</p>
+                    </div>
