@@ -200,14 +200,15 @@
             border-bottom-left-radius: 3px;
         }
 
-        /* Perfectly Aligned & Sized Map Pin Container */
+        /* Map Container with Bouncing Pin */
         .map-container {
             position: relative;
             width: 100%;
-            height: 220px;
+            height: 320px;
             border-radius: 8px;
             overflow: hidden;
-            border: 1px solid #eaeaea;
+            border: 1px solid #e1e4e8;
+            background: #ffffff;
         }
 
         .map-container img {
@@ -217,7 +218,6 @@
             display: block;
         }
 
-        /* Precisely Positioned & Sized Bouncing Pin */
         .animated-pin {
             position: absolute;
             top: 30%;
@@ -257,6 +257,58 @@
             border-radius: 50%;
             margin-top: 1px;
             animation: pulseGlow 1.5s infinite ease-in-out;
+        }
+
+        /* Google Review QR Loop Widget */
+        .qr-simulator {
+            background: #ffffff;
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            height: 320px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .qr-box {
+            width: 110px;
+            height: 110px;
+            background: #f1f3f4;
+            border: 2px dashed #dadce0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+        }
+
+        .qr-simulator h4 {
+            margin: 0 0 6px 0;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        .qr-simulator p {
+            margin: 0 0 14px 0;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-style: normal !important;
+        }
+
+        .qr-btn {
+            background: #1a73e8;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
         }
 
         @keyframes bouncePin {
@@ -456,10 +508,10 @@
         <!-- Interactive Systems & Digital Demos Section -->
         <section id="interactive-demos">
             <h2>Interactive Systems & Digital Demos</h2>
-            <p>A closer look at the automated engagement and local search visibility solutions deployed for M&C Bakehouse.</p>
+            <p>A closer look at the automated engagement, local search visibility, and offline-to-online review loops deployed for M&C Bakehouse.</p>
             
             <div class="demos-grid">
-                <!-- Messenger Automation Demo (Scrollable) -->
+                <!-- 1. Scrollable Messenger Automation Demo -->
                 <div class="demo-card">
                     <div class="chat-simulator">
                         <div class="chat-header">
@@ -477,7 +529,7 @@
                     <p>Scrollable simulation of the 24/7 automated Messenger FAQ and order routing workflow.</p>
                 </div>
 
-                <!-- Google Business Profile Optimization with Perfectly Sized & Placed Bouncing Pin -->
+                <!-- 2. Animated GBP Map Pin Demo -->
                 <div class="demo-card">
                     <div class="map-container">
                         <img src="image_12af1b.png" alt="Google Business Profile Map Optimization">
@@ -486,7 +538,20 @@
                             <div class="pin-glow"></div>
                         </div>
                     </div>
-                    <p style="margin-top: 14px;">Optimized Google Business Profile map pin highlighting the verified M&C Bakehouse location along Lopez Jaena St., Jaro, Iloilo City.</p>
+                    <p style="margin-top: 14px;">Optimized Google Business Profile map pin highlighting the verified M&C Bakehouse location along Lopez Jaena St.</p>
+                </div>
+
+                <!-- 3. Google Review QR Code Loop Demo -->
+                <div class="demo-card">
+                    <div class="qr-simulator">
+                        <div class="qr-box">
+                            📱
+                        </div>
+                        <h4>Scan to Rate on Google</h4>
+                        <p>Turn walk-in customers into 5-star digital advocates instantly via table tents.</p>
+                        <button class="qr-btn">Simulate QR Scan</button>
+                    </div>
+                    <p style="margin-top: 14px;">Offline-to-Online (O2O) review generation loop bridging in-store foot traffic to Google Maps.</p>
                 </div>
             </div>
         </section>
