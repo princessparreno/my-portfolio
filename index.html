@@ -68,7 +68,7 @@
             font-size: 1.5rem;
         }
 
-        /* Photo & Visual Gallery Grid */
+        /* Photo Gallery Grid */
         .photo-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -101,6 +101,35 @@
         }
 
         .photo-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 14px 0 0 0;
+            font-style: italic;
+        }
+
+        /* Demos Section Grid */
+        .demos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .demo-card {
+            background: #fafbfc;
+            border: 1px solid #eaeaea;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .demo-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .demo-card p {
             font-size: 0.85rem;
             color: var(--text-muted);
             margin: 14px 0 0 0;
@@ -149,7 +178,7 @@
         }
 
         .chat-bubble {
-            max-width: 80%;
+            max-width: 85%;
             padding: 10px 14px;
             border-radius: 15px;
             font-size: 0.85rem;
@@ -169,6 +198,60 @@
             color: #050505;
             align-self: flex-start;
             border-bottom-left-radius: 3px;
+        }
+
+        /* Map Preview Widget */
+        .map-preview {
+            background: #ffffff;
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            height: 320px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .map-header {
+            background: #ea4335;
+            color: white;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .map-body {
+            padding: 20px;
+            flex: 1;
+            background: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .map-pin-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ea4335;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .map-pin-card h4 {
+            margin: 0 0 5px 0;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        .map-pin-card p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: normal !important;
         }
 
         @keyframes fadeIn {
@@ -307,7 +390,7 @@
     </header>
 
     <main>
-        <!-- Overview & Visual Gallery -->
+        <!-- Overview & Team Photos -->
         <section id="overview">
             <h2>Overview & Team Collaboration</h2>
             <p>As part of the DICT ILCDB SPARK Program, our multidisciplinary team partnered with local enterprises in Iloilo City to help digitize their businesses through direct client consultations, diagnosing growth bottlenecks and delivering tailored recommendations, enhanced local discoverability, customer inquiry automation, and structured content creation strategies.</p>
@@ -320,20 +403,6 @@
                 <div class="photo-card">
                     <img src="mcbakehouse.jpg" alt="M&C Bakehouse Client Collaboration">
                     <p>On-site strategy session with the M&C Bakehouse Owner.</p>
-                </div>
-                <div class="photo-card">
-                    <div class="chat-simulator">
-                        <div class="chat-header">
-                            <span></span> M&C Bakehouse Messenger (Automated)
-                        </div>
-                        <div class="chat-body">
-                            <div class="chat-bubble user">Hello! Open po ba kayo ngayon sa Jaro?</div>
-                            <div class="chat-bubble bot">Hello! Yes po! Open kami daily from 8 AM to 7 PM sa Lopez Jaena St. 🥖✨</div>
-                            <div class="chat-bubble user">Pano umorder ng Almond Biscocho?</div>
-                            <div class="chat-bubble bot">Maaari po kayong mag-order direkta sa aming Lazada store! Heto po ang link: lazada.com.ph/mcbakehouse 😊</div>
-                        </div>
-                    </div>
-                    <p>Live simulation of the automated 24/7 Messenger FAQ and order routing workflow.</p>
                 </div>
             </div>
         </section>
@@ -414,6 +483,47 @@
                     <span class="status-badge">Implemented</span>
                 </li>
             </ul>
+        </section>
+
+        <!-- Interactive Systems & Digital Demos Section -->
+        <section id="interactive-demos">
+            <h2>Interactive Systems & Digital Demos</h2>
+            <p>A closer look at the automated engagement and local search visibility solutions deployed for M&C Bakehouse.</p>
+            
+            <div class="demos-grid">
+                <!-- Messenger Automation Demo -->
+                <div class="demo-card">
+                    <div class="chat-simulator">
+                        <div class="chat-header">
+                            <span></span> M&C Bakehouse Messenger (Automated)
+                        </div>
+                        <div class="chat-body">
+                            <div class="chat-bubble user">Hello! Open po ba kayo ngayon?</div>
+                            <div class="chat-bubble bot">Hello! Yes po! Open kami daily from 9 AM to 5 PM sa Lopez Jaena St. 🥖✨</div>
+                            <div class="chat-bubble user">Pano umorder ng Almond Biscocho?</div>
+                            <div class="chat-bubble bot">Maaari po kayong mag-order direkta sa aming Lazada store! Heto po ang link: lazada.com.ph/mcbakehouse 😊</div>
+                        </div>
+                    </div>
+                    <p>Live simulation of the 24/7 automated Messenger FAQ and order routing workflow.</p>
+                </div>
+
+                <!-- Google Business Profile Map Pin Demo -->
+                <div class="demo-card">
+                    <div class="map-preview">
+                        <div class="map-header">
+                            📍 Google Business Profile Optimization
+                        </div>
+                        <div class="map-body">
+                            <div class="map-pin-card">
+                                <h4>M&C Bakehouse</h4>
+                                <p><strong>Status:</strong> Verified & Optimized (Jaro, Iloilo City)</p>
+                                <p style="margin-top: 6px; font-size: 0.8rem; color: #e94560;">✓ Corrected Lopez Jaena St. map pin & NAP consistency</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Optimized Google Business Profile map listing resolving local search invisibility.</p>
+                </div>
+            </div>
         </section>
     </main>
 
