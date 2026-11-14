@@ -260,7 +260,7 @@
             animation: pulseGlow 1.5s infinite ease-in-out;
         }
 
-        /* Google Review QR Loop Widget */
+        /* Google Review QR Loop Widget Using MCQR.png */
         .qr-simulator {
             background: #ffffff;
             border: 1px solid #e1e4e8;
@@ -269,45 +269,57 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 20px;
+            justify-content: space-between;
+            padding: 16px;
             text-align: center;
             box-sizing: border-box;
         }
 
-        .qr-box {
+        .qr-img-container {
             width: 110px;
             height: 110px;
-            background: #f1f3f4;
-            border: 2px dashed #dadce0;
+            background: #ffffff;
+            border: 1px solid #dadce0;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.2rem;
-            margin-bottom: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .qr-img-container:hover {
+            transform: scale(1.03);
+        }
+
+        .qr-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .qr-simulator h4 {
-            margin: 0 0 6px 0;
+            margin: 4px 0 2px 0;
             color: var(--primary);
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .qr-simulator p {
-            margin: 0 0 14px 0;
-            font-size: 0.8rem;
+            margin: 0;
+            font-size: 0.75rem;
             color: var(--text-muted);
             font-style: normal !important;
+            line-height: 1.3;
         }
 
         .qr-btn {
             background: #1a73e8;
             color: white;
             border: none;
-            padding: 8px 16px;
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
             cursor: pointer;
             transition: background 0.2s ease;
@@ -547,14 +559,16 @@
                     <p style="margin-top: 14px;">Optimized Google Business Profile map pin highlighting the verified M&C Bakehouse location along Lopez Jaena St.</p>
                 </div>
 
-                <!-- 3. Google Review QR Code Loop Demo -->
+                <!-- 3. Google Review QR Code Loop Demo (Using MCQR.png) -->
                 <div class="demo-card">
                     <div class="qr-simulator">
-                        <div class="qr-box">
-                            📱
+                        <div class="qr-img-container" onclick="window.open('https://www.google.com/maps/place//@10.7270011,122.5561256,17z/data=!3m1!4b1!4m3!3m2!1s0x33aee59911369e21:0xc3f0745058ed2974!12e1?entry=ttu', '_blank')" title="Click to test QR link">
+                            <img src="MCQR.png" alt="M&C Bakehouse Google Review QR Code">
                         </div>
-                        <h4>Scan to Rate on Google</h4>
-                        <p>Turn walk-in customers into 5-star digital advocates instantly via table tents.</p>
+                        <div>
+                            <h4>Scan to Rate on Google</h4>
+                            <p>Turn walk-in foot traffic into 5-star digital advocates instantly.</p>
+                        </div>
                         <button class="qr-btn" onclick="window.open('https://www.google.com/maps/place//@10.7270011,122.5561256,17z/data=!3m1!4b1!4m3!3m2!1s0x33aee59911369e21:0xc3f0745058ed2974!12e1?entry=ttu', '_blank')">Simulate QR Scan</button>
                     </div>
                     <p style="margin-top: 14px;">Offline-to-Online (O2O) review generation loop bridging in-store foot traffic to Google Maps.</p>
@@ -606,4 +620,8 @@
     </main>
 
     <footer>
-        <p>&copy; 2
+        <p>&copy; 2026 DICT ILCDB SPARK Program Portfolio Collective. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
