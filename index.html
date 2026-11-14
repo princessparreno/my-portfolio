@@ -68,7 +68,7 @@
             font-size: 1.5rem;
         }
 
-        /* Photo Gallery Grid */
+        /* Photo & Visual Gallery Grid */
         .photo-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -105,6 +105,75 @@
             color: var(--text-muted);
             margin: 14px 0 0 0;
             font-style: italic;
+        }
+
+        /* Live Chat Simulator Widget */
+        .chat-simulator {
+            background: #ffffff;
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            height: 320px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .chat-header {
+            background: #0084ff;
+            color: white;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chat-header span {
+            width: 8px;
+            height: 8px;
+            background: #4cd964;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .chat-body {
+            padding: 15px;
+            flex: 1;
+            overflow-y: auto;
+            background: #fdfdfd;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .chat-bubble {
+            max-width: 80%;
+            padding: 10px 14px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .chat-bubble.user {
+            background: #0084ff;
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 3px;
+        }
+
+        .chat-bubble.bot {
+            background: #e4e6eb;
+            color: #050505;
+            align-self: flex-start;
+            border-bottom-left-radius: 3px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Team Grid */
@@ -238,7 +307,7 @@
     </header>
 
     <main>
-        <!-- Overview & Side-by-Side Photos -->
+        <!-- Overview & Visual Gallery -->
         <section id="overview">
             <h2>Overview & Team Collaboration</h2>
             <p>As part of the DICT ILCDB SPARK Program, our multidisciplinary team partnered with local enterprises in Iloilo City to help digitize their businesses through direct client consultations, diagnosing growth bottlenecks and delivering tailored recommendations, enhanced local discoverability, customer inquiry automation, and structured content creation strategies.</p>
@@ -251,6 +320,20 @@
                 <div class="photo-card">
                     <img src="mcbakehouse.jpg" alt="M&C Bakehouse Client Collaboration">
                     <p>On-site strategy session with the M&C Bakehouse Owner.</p>
+                </div>
+                <div class="photo-card">
+                    <div class="chat-simulator">
+                        <div class="chat-header">
+                            <span></span> M&C Bakehouse Messenger (Automated)
+                        </div>
+                        <div class="chat-body">
+                            <div class="chat-bubble user">Hello! Open po ba kayo ngayon sa Jaro?</div>
+                            <div class="chat-bubble bot">Hello! Yes po! Open kami daily from 8 AM to 7 PM sa Lopez Jaena St. 🥖✨</div>
+                            <div class="chat-bubble user">Pano umorder ng Almond Biscocho?</div>
+                            <div class="chat-bubble bot">Maaari po kayong mag-order direkta sa aming Lazada store! Heto po ang link: lazada.com.ph/mcbakehouse 😊</div>
+                        </div>
+                    </div>
+                    <p>Live simulation of the automated 24/7 Messenger FAQ and order routing workflow.</p>
                 </div>
             </div>
         </section>
@@ -300,3 +383,43 @@
                         <span class="deliverable-title">Diagnosis & Build Sheet Deck</span>
                         <p class="deliverable-desc">Comprehensive digital audit, local search gap analysis, bottleneck diagnosis, and 5-day implementation roadmap for M&C Bakehouse.</p>
                     </div>
+                    <a href="https://docs.google.com/presentation/d/1fWg0zwI_dWWt6dHLZSb3nEiDP1WOOuhuy-wU6ibkQYY/edit?usp=sharing" target="_blank">View Presentation &rarr;</a>
+                </li>
+                <li>
+                    <div class="deliverable-info">
+                        <span class="deliverable-title">Local Search & GBP Optimization Audit</span>
+                        <p class="deliverable-desc">Google Business Profile claiming, Lopez Jaena St. map pin verification, Name-Address-Phone (NAP) consistency checks, and local competitor mapping.</p>
+                    </div>
+                    <span class="status-badge">Delivered</span>
+                </li>
+                <li>
+                    <div class="deliverable-info">
+                        <span class="deliverable-title">Brand Identity & Visual Positioning Guide</span>
+                        <p class="deliverable-desc">Brand tone guidelines, visual asset standardization, and hero product positioning (Artisan Almond Biscocho) tailored for digital channels.</p>
+                    </div>
+                    <span class="status-badge">Delivered</span>
+                </li>
+                <li>
+                    <div class="deliverable-info">
+                        <span class="deliverable-title">Multi-Channel Content & Campaign Playbook</span>
+                        <p class="deliverable-desc">Strategic channel selection (Facebook, Instagram, TikTok), question-backed content pillars, Iloilo pasalubong hashtag systems, and launch assets.</p>
+                    </div>
+                    <span class="status-badge">Delivered</span>
+                </li>
+                <li>
+                    <div class="deliverable-info">
+                        <span class="deliverable-title">Customer Inquiry Automation & Community Engagement System</span>
+                        <p class="deliverable-desc">Automated Messenger FAQ workflows, direct Lazada order routing, and a structured Member Experience & Feedback loyalty loop.</p>
+                    </div>
+                    <span class="status-badge">Implemented</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 DICT ILCDB SPARK Program Portfolio Collective. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
