@@ -171,7 +171,7 @@
         .chat-body {
             padding: 15px;
             flex: 1;
-            overflow-y: auto; /* Enables smooth scrolling up and down */
+            overflow-y: auto;
             background: #fdfdfd;
             display: flex;
             flex-direction: column;
@@ -198,6 +198,75 @@
             color: #050505;
             align-self: flex-start;
             border-bottom-left-radius: 3px;
+        }
+
+        /* Animated Map Pin Container */
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #eaeaea;
+        }
+
+        .map-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Bouncing & Glowing Pin Marker */
+        .animated-pin {
+            position: absolute;
+            top: 35%;
+            left: 45%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: bouncePin 1.5s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        .pin-icon {
+            width: 32px;
+            height: 32px;
+            background: #ea4335;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            box-shadow: 0 0 15px rgba(234, 67, 53, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pin-icon::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .pin-glow {
+            width: 20px;
+            height: 8px;
+            background: rgba(234, 67, 53, 0.4);
+            border-radius: 50%;
+            margin-top: 2px;
+            animation: pulseGlow 1.5s infinite ease-in-out;
+        }
+
+        @keyframes bouncePin {
+            0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+            50% { transform: translate(-50%, -50%) translateY(-10px); }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.4); opacity: 0.2; }
         }
 
         /* Team Grid */
@@ -384,7 +453,7 @@
             </div>
         </section>
 
-        <!-- Interactive Systems & Digital Demos Section (Placed right below The Team) -->
+        <!-- Interactive Systems & Digital Demos Section -->
         <section id="interactive-demos">
             <h2>Interactive Systems & Digital Demos</h2>
             <p>A closer look at the automated engagement and local search visibility solutions deployed for M&C Bakehouse.</p>
@@ -408,12 +477,16 @@
                     <p>Scrollable simulation of the 24/7 automated Messenger FAQ and order routing workflow.</p>
                 </div>
 
-                <!-- Google Business Profile Optimization (Using Uploaded Map) -->
+                <!-- Google Business Profile Optimization with Animated Bouncing Pin -->
                 <div class="demo-card">
-                    <div class="photo-card" style="margin: 0; padding: 0; border: none; background: transparent;">
+                    <div class="map-container">
                         <img src="image_12af1b.png" alt="Google Business Profile Map Optimization">
+                        <div class="animated-pin">
+                            <div class="pin-icon"></div>
+                            <div class="pin-glow"></div>
+                        </div>
                     </div>
-                    <p style="margin-top: 14px;">Optimized Google Business Profile map pin and listing verification along Lopez Jaena St., Jaro, Iloilo City.</p>
+                    <p style="margin-top: 14px;">Optimized Google Business Profile map pin with live glowing animation along Lopez Jaena St., Jaro, Iloilo City.</p>
                 </div>
             </div>
         </section>
