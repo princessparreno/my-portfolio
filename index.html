@@ -81,6 +81,12 @@
             padding: 15px;
             border-radius: 12px;
             text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
         }
 
         .photo-card img {
@@ -113,6 +119,19 @@
             padding: 20px;
             border-radius: 12px;
             text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .demo-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .demo-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 14px 0 0 0;
+            font-style: italic;
         }
 
         .chat-simulator {
@@ -135,6 +154,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            flex-shrink: 0;
         }
 
         .chat-header span {
@@ -197,7 +217,7 @@
         .animated-pin {
             position: absolute;
             top: 32%;
-            left: 33.5%; /* Shifted slightly to the left */
+            left: 33.5%;
             transform: translate(-50%, -50%);
             display: flex;
             flex-direction: column;
@@ -261,12 +281,31 @@
             justify-content: center;
             overflow: hidden;
             cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .qr-img-container:hover {
+            transform: scale(1.03);
         }
 
         .qr-img-container img {
             width: 100%;
             height: 100%;
             object-fit: contain;
+        }
+
+        .qr-simulator h4 {
+            margin: 4px 0 2px 0;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        .qr-simulator p {
+            margin: 0;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-style: normal !important;
+            line-height: 1.3;
         }
 
         .qr-btn {
@@ -278,6 +317,11 @@
             font-size: 0.75rem;
             font-weight: 600;
             cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .qr-btn:hover {
+            background: #1557b0;
         }
 
         @keyframes bouncePin {
@@ -303,6 +347,17 @@
             padding: 25px;
             border-radius: 8px;
             text-align: left;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .team-card:hover {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .team-card h3 {
+            margin: 0 0 5px 0;
+            color: var(--primary);
+            font-size: 1.1rem;
         }
 
         .role {
@@ -311,6 +366,13 @@
             font-size: 0.85rem;
             margin-bottom: 12px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .team-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
         }
 
         .deliverables-list {
@@ -329,6 +391,11 @@
             justify-content: space-between;
             align-items: center;
             gap: 20px;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .deliverables-list li:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
         }
 
         .deliverable-info {
@@ -343,6 +410,24 @@
             margin-bottom: 4px;
         }
 
+        .deliverable-desc {
+            margin: 0;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .deliverables-list a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .deliverables-list a:hover {
+            text-decoration: underline;
+        }
+
         .status-badge {
             background-color: #eef2f7;
             color: var(--primary);
@@ -351,6 +436,14 @@
             padding: 5px 12px;
             border-radius: 20px;
             white-space: nowrap;
+        }
+
+        @media (max-width: 600px) {
+            .deliverables-list li {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
         }
 
         footer {
@@ -436,6 +529,8 @@
                             <div class="chat-bubble bot">Hello! Yes po! Open kami daily from 9 AM to 5 PM sa Lopez Jaena St. 🥖✨</div>
                             <div class="chat-bubble user">Pano umorder ng Almond Biscocho?</div>
                             <div class="chat-bubble bot">Maaari po kayong mag-order direkta sa aming Lazada store! Heto po ang link: lazada.com.ph/mcbakehouse 😊</div>
+                            <div class="chat-bubble user">May physical store ba kayo malapit sa Jaro?</div>
+                            <div class="chat-bubble bot">Opo! Matatagpuan po kami sa Lopez Jaena St., Jaro, Iloilo City. Kitakits po doon!</div>
                         </div>
                     </div>
                     <p>Scrollable simulation of the 24/7 automated Messenger FAQ and order routing workflow.</p>
@@ -454,12 +549,12 @@
 
                 <div class="demo-card">
                     <div class="qr-simulator">
-                        <div class="qr-img-container" onclick="window.open('https://www.google.com/maps/place//@10.7270011,122.5561256,17z/data=!3m1!4b1!4m3!3m2!1s0x33aee59911369e21:0xc3f0745058ed2974!12e1?entry=ttu', '_blank')">
+                        <div class="qr-img-container" onclick="window.open('https://www.google.com/maps/place//@10.7270011,122.5561256,17z/data=!3m1!4b1!4m3!3m2!1s0x33aee59911369e21:0xc3f0745058ed2974!12e1?entry=ttu', '_blank')" title="Click to test QR link">
                             <img src="MCQR.png" alt="M&C Bakehouse Google Review QR Code">
                         </div>
                         <div>
                             <h4>Scan to Rate on Google</h4>
-                            <p style="margin: 0; font-size: 0.75rem; color: #666;">Turn walk-in foot traffic into 5-star digital advocates instantly.</p>
+                            <p>Turn walk-in foot traffic into 5-star digital advocates instantly.</p>
                         </div>
                         <button class="qr-btn" onclick="window.open('https://www.google.com/maps/place//@10.7270011,122.5561256,17z/data=!3m1!4b1!4m3!3m2!1s0x33aee59911369e21:0xc3f0745058ed2974!12e1?entry=ttu', '_blank')">Simulate QR Scan</button>
                     </div>
@@ -474,16 +569,37 @@
                 <li>
                     <div class="deliverable-info">
                         <span class="deliverable-title">Diagnosis & Build Sheet Deck</span>
-                        <p style="margin:0; font-size:0.9rem; color:#666;">Comprehensive digital audit, local search gap analysis, and 5-day implementation roadmap.</p>
+                        <p class="deliverable-desc">Comprehensive digital audit, local search gap analysis, bottleneck diagnosis, and 5-day implementation roadmap for M&C Bakehouse.</p>
                     </div>
-                    <a href="https://docs.google.com/presentation/d/1fWg0zwI_dWWt6dHLZSb3nEiDP1WOOuhuy-wU6ibkQYY/edit?usp=sharing" target="_blank" style="color:#e94560; font-weight:600; text-decoration:none;">View &rarr;</a>
+                    <a href="https://docs.google.com/presentation/d/1fWg0zwI_dWWt6dHLZSb3nEiDP1WOOuhuy-wU6ibkQYY/edit?usp=sharing" target="_blank">View Presentation &rarr;</a>
                 </li>
                 <li>
                     <div class="deliverable-info">
                         <span class="deliverable-title">Local Search & GBP Optimization Audit</span>
-                        <p style="margin:0; font-size:0.9rem; color:#666;">Google Business Profile claiming, Lopez Jaena St. map pin verification, and NAP consistency checks.</p>
+                        <p class="deliverable-desc">Google Business Profile claiming, Lopez Jaena St. map pin verification, Name-Address-Phone (NAP) consistency checks, and local competitor mapping.</p>
                     </div>
                     <span class="status-badge">Delivered</span>
+                </li>
+                <li>
+                    <div class="deliverable-info">
+                        <span class="deliverable-title">Brand Identity & Visual Positioning Guide</span>
+                        <p class="deliverable-desc">Brand tone guidelines, visual asset standardization, and hero product positioning (Artisan Almond Biscocho) tailored for digital channels.</p>
+                    </div>
+                    <span class="status-badge">Delivered</span>
+                </li>
+                <li>
+                    <div class="deliverable-info">
+                        <span class="deliverable-title">Multi-Channel Content & Campaign Playbook</span>
+                        <p class="deliverable-desc">Strategic channel selection (Facebook, Instagram, TikTok), question-backed content pillars, Iloilo pasalubong hashtag systems, and launch assets.</p>
+                    </div>
+                    <span class="status-badge">Delivered</span>
+                </li>
+                <li>
+                    <div class="deliverable-info">
+                        <span class="deliverable-title">Customer Inquiry Automation & Community Engagement System</span>
+                        <p class="deliverable-desc">Automated Messenger FAQ workflows, direct Lazada order routing, and a structured Member Experience & Feedback loyalty loop.</p>
+                    </div>
+                    <span class="status-badge">Implemented</span>
                 </li>
             </ul>
         </section>
