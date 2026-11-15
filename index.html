@@ -3,268 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Princess Sweden Shane Parreno | DICT SPARK Portfolio</title>
+    <title>DICT SPARK Portfolio</title>
     <style>
-        :root {
-            --primary: #1a1a2e;
-            --accent: #e94560;
-            --bg-color: #f8f9fa;
-            --card-bg: #ffffff;
-            --text-main: #333333;
-            --text-muted: #666666;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.7;
-        }
-
-        header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
-            color: #fff;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0 0 10px 0;
-            font-size: 2.5rem;
-            color: #ffffff;
-            letter-spacing: -0.5px;
-        }
-
-        header p {
-            margin: 0;
-            color: #e94560;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        main {
-            max-width: 1000px;
-            margin: -30px auto 40px auto;
-            padding: 0 20px;
-        }
-
-        section {
-            background: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            padding: 40px;
-            margin-bottom: 30px;
-        }
-
-        h2 {
-            color: var(--primary);
-            border-bottom: 3px solid var(--accent);
-            padding-bottom: 10px;
-            margin-top: 0;
-            font-size: 1.5rem;
-        }
-
-        .photo-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 25px;
-        }
-
-        .photo-card {
-            background: #fafbfc;
-            border: 1px solid #eaeaea;
-            padding: 15px;
-            border-radius: 12px;
-            text-align: center;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .photo-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .photo-card img {
-            width: 100%;
-            height: auto;
-            max-height: 320px;
-            object-fit: contain;
-            border-radius: 8px;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .photo-card p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin: 14px 0 0 0;
-            font-style: italic;
-        }
-
-        .demos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 25px;
-        }
-
-        .demo-card {
-            background: #fafbfc;
-            border: 1px solid #eaeaea;
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .demo-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .demo-card p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin: 14px 0 0 0;
-            font-style: italic;
-        }
-
-        .chat-simulator {
-            background: #ffffff;
-            border: 1px solid #e1e4e8;
-            border-radius: 8px;
-            height: 320px;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            text-align: left;
-        }
-
-        .chat-header {
-            background: #0084ff;
-            color: white;
-            padding: 10px 15px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-shrink: 0;
-        }
-
-        .chat-header span {
-            width: 8px;
-            height: 8px;
-            background: #4cd964;
-            border-radius: 50%;
-            display: inline-block;
-        }
-
-        .chat-body {
-            padding: 15px;
-            flex: 1;
-            overflow-y: auto;
-            background: #fdfdfd;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .chat-bubble {
-            max-width: 85%;
-            padding: 10px 14px;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            line-height: 1.4;
-        }
-
-        .chat-bubble.user {
-            background: #0084ff;
-            color: white;
-            align-self: flex-end;
-            border-bottom-right-radius: 3px;
-        }
-
-        .chat-bubble.bot {
-            background: #e4e6eb;
-            color: #050505;
-            align-self: flex-start;
-            border-bottom-left-radius: 3px;
-        }
-
-        .map-container {
-            position: relative;
-            width: 100%;
-            height: 320px;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid #e1e4e8;
-            background: #ffffff;
-        }
-
-        .map-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .animated-pin {
-            position: absolute;
-            top: 32%;
-            left: 33.5%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            animation: bouncePin 1.5s infinite ease-in-out;
-            pointer-events: none;
-        }
-
-        .pin-icon {
-            width: 15px;
-            height: 15px;
-            background: #ea4335;
-            border-radius: 50% 50% 50% 0;
-            transform: rotate(-45deg);
-            box-shadow: 0 0 6px rgba(234, 67, 53, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #ffffff;
-        }
-
-        .pin-icon::after {
-            content: '';
-            width: 4px;
-            height: 4px;
-            background: white;
-            border-radius: 50%;
-        }
-
-        .pin-glow {
-            width: 10px;
-            height: 3px;
-            background: rgba(234, 67, 53, 0.35);
-            border-radius: 50%;
-            margin-top: 1px;
-            animation: pulseGlow 1.5s infinite ease-in-out;
-        }
-
-        .qr-simulator {
-            background: #ffffff;
-            border: 1px solid #e1e4e8;
-            border-radius: 8px;
-            height: 320px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            padding: 16px;
-            text-align: center;
-            box-
+        :root { --primary: #1a1a2e; --accent: #e94560; --bg-color: #f8f9fa; --card-bg: #ffffff; --text-main: #333333; --text-muted: #666666; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--bg-color); color: var(--text-main); line-height: 1.7; }
+        header { background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%); color: #fff; padding: 60px 20px; text-align: center; }
+        header h1 { margin: 0 0 10px 0; font-size: 2.5rem; color: #ffffff; letter-spacing: -0.5px; }
+        header p { margin: 0; color: #e94560; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        main { max-width: 1000px; margin: -30px auto 40px auto; padding: 0 20px; }
+        section { background: var(--card-bg); border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); padding: 40px; margin-bottom: 30px; }
+        h2 { color: var(--primary); border-bottom: 3px solid var(--accent); padding-bottom: 10px; margin-top: 0; font-size: 1.5rem; }
+        .photo-gallery, .demos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 25px; }
+        .photo-card, .demo-card { background: #fafbfc; border: 1px solid #eaeaea; padding: 15px; border-radius: 12px; text-align: center; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .demo-card { padding: 20px; }
+        .photo-card:hover, .demo-card:hover { transform: translateY(-4px); box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); }
+        .photo-card img { width: 100%; height: auto; max-height: 320px; object-fit: contain; border-radius: 8px; display: block; margin: 0 auto; }
+        .photo-card p, .demo-card p { font-size: 0.85rem; color: var(--text-muted); margin: 14px 0 0 0; font-style: italic; }
+        .chat-simulator { background: #ffffff; border: 1px solid #e1e4e8; border-radius: 8px; height: 320px; display: flex; flex-direction: column; overflow: hidden; text-align: left; }
+        .chat-header { background: #0084ff; color: white; padding: 10px 15px; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+        .chat-header span { width: 8px; height: 8px; background: #4cd964; border-radius: 50%; display: inline-block; }
+        .chat-body { padding: 15px; flex: 1; overflow-y: auto; background: #fdfdfd; display: flex; flex-direction: column; gap: 12px; }
+        .chat-bubble { max-width: 85%; padding: 10px 14px; border-radius: 15px; font-size: 0.85rem; line-height: 1.4; }
+        .chat-bubble.user { background: #0084ff; color: white; align-self: flex-end; border-bottom-right-radius: 3px; }
+        .chat-bubble.bot { background: #e4e6eb; color: #050505; align-self: flex-start; border-bottom-left-radius: 3px; }
+        .map-container { position: relative; width: 100%; height: 320px; border-radius: 8px; overflow: hidden; border: 1px solid #e1e4e8; background: #ffffff; }
+        .map-container img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .animated-pin { position: absolute; top: 32%; left: 33.5%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; animation: bouncePin 1.5s infinite ease-in-out; pointer-events: none; }
+        .pin-icon { width: 15px; height: 15px; background: #ea4335; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); box-shadow: 0 0 6px rgba(234, 67, 53, 0.7); display: flex; align-items: center; justify-content: center; border: 1px solid #ffffff; }
+        .pin-icon::after { content: ''; width: 4px; height: 4px; background: white; border-radius: 50%; }
+        .pin-glow { width: 10px; height: 3px; background: rgba(234, 67, 53, 0.35); border-radius: 50%; margin-top: 1px; animation: pulseGlow 1.5s infinite ease-in-out; }
+        .qr-simulator { background: #ffffff; border: 1px solid #e1e4e8; border-radius: 8px; height: 320px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 16px; text-align: center; box-sizing: border-box; }
+        .qr-img-container { width: 110px; height: 110px; background: #ffffff; border: 1px solid #dadce0; border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; cursor: pointer; transition: transform 0.2s ease; }
+        .qr-img-container:hover { transform: scale(1.03); }
+        .qr-img-container img { width: 100%; height: 100%; object-fit: contain; }
+        .qr-simulator h4 { margin: 4px 0 2px 0; color: var(--primary); font-size: 0.95rem; }
+        .qr-simulator p { margin: 0; font-size: 0.75rem; color: var(--text-muted); font-style: normal !important; line-height: 1.3; }
+        .qr-btn { background: #1a73e8; color: white; border: none; padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; cursor: pointer; transition: background 0.2s ease; }
+        .qr-btn:hover { background: #1557b0; }
+        @keyframes bouncePin { 0%, 100% { transform: translate(-50%, -50%) translateY(0); } 50% { transform: translate(-50%, -50%) translateY(-5px); } }
+        @keyframes pulseGlow { 0%, 100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.3); opacity: 0.2; } }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 25px; }
+        .team-card { background: #fafbfc; border: 1px solid #eaeaea; padding: 25px; border-radius: 8px; text-align: left; transition: box-shadow 0.2s ease; }
+        .team-card:hover { box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); }
+        .team-card h3 { margin: 0 0 5px 0; color: var(--primary); font-size: 1.1rem; }
+        .role { font-weight: bold; color: var(--accent); font-size: 0.85rem; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .team-card p { margin: 0; font-size: 0.95rem; color: var(--text-muted); }
+        .deliverables-list { list-style: none; padding: 0; margin-top: 20px; }
+        .deliverables-list li { background: #fafbfc; border: 1px solid #eaeaea; padding: 20px 24px; margin-bottom: 14px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; gap: 20px; transition: box-shadow 0.2s ease; }
+        .deliverables-list li:hover { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); }
+        .deliverable-info { flex: 1; }
+        .deliverable-title { display: block; font-size: 1.05rem; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+        .deliverable-desc { margin: 0; font-size: 0.92rem; color: var(--text-muted); line-height: 1.5; }
+        .deliverables-list a { color: var(--accent); text-decoration: none; font-weight: 600; white-space: nowrap; }
+        .deliverables-list a:hover { text-decoration: underline; }
+        .status-badge { background-color: #eef2f7; color: var(--primary); font-size: 0.8rem; font-weight: 600; padding: 5px 12px; border-radius: 20px; white-space: nowrap; }
+        .status-badge.pending { background-color: #fff3cd; color: #856404; }
+        @media (max-width: 600px) { .deliverables-list li { flex-direction: column; align-items: flex-start; gap: 12px; } }
+        footer { text-align: center; padding: 20px; color: var(--text-muted); font-size: 0.85rem; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DICT ILCDB SPARK Program Portfolio</h1>
+        <p>Digital Marketing Scholars & Client Growth Suite — M&C Bakehouse</p>
+    </header>
+    <main>
+        <section id="overview">
+            <h2>Overview & Team Collaboration</h2>
+            <p>As part of the DICT ILCDB SPARK Program, our multidisciplinary team partnered with local enterprises in Iloilo City to help digitize their businesses through direct client consultations, diagnosing growth bottlenecks and delivering tailored recommendations, enhanced local discoverability, customer inquiry automation, and structured content creation strategies.</p>
+            <div class="photo-gallery">
+                <div class="photo-card">
+                    <img src="ditc.jpg" alt="DICT SPARK Scholars Team">
+                    <p>DICT ILCDB SPARK Program Digital Marketing Scholars Team</p>
+                </div>
+                <div class="photo-card">
+                    <img src="mcbakehouse.jpg" alt="M&C Bakehouse Client Collaboration">
+                    <p>On-site strategy session with the M&C Bakehouse Owner.</p>
+                </div>
+            </div>
+        </section>
+        <section id="team">
+            <h2>The Digital Marketing Scholars</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <h3>Ed Ruel Brasileño</h3>
+                    <div class="role">Account Lead</div>
+                    <p>Manages the client relationship pipeline, project kickoff, client intake summaries, and presentation & Build Sheet approvals.</p>
+                </div>
+                <div class="team-card">
+                    <h3>Julito Petinglay Jr.</h3>
+                    <div class="role">Brand Lead</div>
+                    <p>Drives brand examinations, brand foundation systems, 1-page brand tone guides, and logo optimizations for premium client deployment.</p>
+                </div>
+                <div class="team-card">
+                    <h3>Jane Carl Macaspac</h3>
+                    <div class="role">Data Lead</div>
+                    <p>Leads search examination audits, clinic diagnosis reports, local competitor mapping, and data-driven visibility insights.</p>
+                </div>
+                <div class="team-card">
+                    <h3>Katrina Naig</h3>
+                    <div class="role">Content Lead</div>
+                    <p>Leads channel examinations, question-backed content pillars, repurposed asset packs, and live Build Day campaign storytelling.</p>
+                </div>
+                <div class="team-card">
+                    <h3>Princess Sweden Shane Parreno</h3>
+                    <div class="role">Community Lead & CoS</div>
+                    <p>Designs interactive member loyalty touchpoints, the Member Experience & Feedback Form, FAQ Guide, and Social Engagement Playbook.</p>
+                </div>
+            </div>
+        </section>
+        <section id="interactive-demos">
+            <h2>Interactive Systems & Digital Demos</h2>
+            <p>A closer look at the automated engagement, local search visibility, and offline-to-online review loops deployed for M&C Bakehouse.</p>
+            <div class="demos-grid">
+                <div class="demo-card">
+                    <div class="chat-simulator">
+                        <div class="chat-header"><span></span> M&C Bakehouse Messenger (Automated)</div>
+                        <div class="chat-body">
+                            <div class="chat-bubble user">Hello! Open po ba kayo ngayon?</div>
+                            <div class="chat-bubble bot">Hello! Yes po! Open kami daily from 9 AM to 5 PM sa Lopez Jaena St. 🥖✨</div>
+                            <div class="chat-bubble user">Pano umorder ng Almond Biscocho?</div>
+                            <div class="chat-bubble bot">Maaari po kayong mag-order direkta sa aming Lazada store! Heto po ang link: lazada.com.ph/mcbakehouse 😊</div>
+                            <div class="chat-bubble user">May physical store ba kayo malapit sa Jaro?</div>
+                            <div class="chat-bubble bot">Opo! Matatagpuan po kami sa Lopez Jaena St., Jaro, Iloilo City. Kitakits po doon!</div>
+                        </div>
+                    </div>
+                    <p>Scrollable simulation of the 24/7 automated Messenger FAQ and order routing workflow.</p>
+                </div>
+                <div class="demo-card">
+                    <div class="map-container">
+                        <img src="image_12af1b.png" alt="Google Business Profile Map Optimization">
+                        <div class="animated-pin">
+                            <div class="pin-icon"></div>
+                            <div class="pin-glow"></div>
+                        </div>
+                    </div>
+                    <p style="margin-top: 14px;">Optimized Google Business Profile map pin highlighting the verified M&C Bakehouse location along Lopez Jaena St.</p>
+                </div>
+                <div class="demo-card">
+                    <div class="qr-simulator">
+                        <div class="qr-img-container" onclick="window.open('https://www.google.com/maps/place//@10.7270011,122.5561256,17z/data=!3m1!4b1!4m3!3m2!1s0x33aee59911369e21:0xc3f0745058ed2974!12e1?entry=ttu', '_blank')" title="Click to test QR link">
+                            <img src="MCQR.png" alt="M&C Bakehouse Google Review QR Code">
+                        </div>
+                        <div>
+                            <h4>Scan to Rate on Google</h4>
+                            <p>Turn walk-in foot traffic into 5-star digital advocates instantly.</p>
+                        </div>
+                        <button class="qr-btn" onclick="window.open('https://www.google.com/maps/place//@10.7270011,122.5561256,17z/data=!3m1!4b1!4m3!3m2!1s0x33aee59911369e21:0xc3f0745058ed2974!12e1?entry=ttu', '_blank')">Simulate QR Scan</button>
+                    </div>
+                    <p style="margin-top: 14px;">Offline-to-Online (O2O) review generation loop bridging in-store foot traffic to Google Maps.</p>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio">
+            <h2>Key Deliverables & Slide Presentations</h2>
+            <ul class="deliverables-list">
+                <li>
+                    <div class="deliverable-info">
+                        <span class="deliverable-title">Diagnosis & Build Sheet Deck</span>
+                        <p class="deliverable-desc">Comprehensive digital audit, local search gap analysis, bottleneck diagnosis, and 5-day implementation roadmap for M&C Bakehouse.</p>
+                    </div>
+                    <a href="https://docs.google.com/presentation/d/1fWg0zwI_dWWt6dHLZSb3nEiDP1WOOuhuy-wU6ibkQYY/edit?usp=sharing" target="_blank">View Presentation &rarr;</a>
+                </li>
+                <li>
+                    <div class="deliverable-info">
+                        <span class="deliverable-title">Local Search & GBP Optimization Audit</span>
+                        <p class="deliverable-desc">Google Business Profile claiming, Lopez Jaena St. map pin verification, Name-Address-Phone (NAP) consistency checks, and local competitor mapping.</p>
+                    </div>
+                    <span class="status-badge">Delivered</span>
+                </li>
+                <li>
+                    <div class="deliverable-info">
+                        <span class="deliverable-title">Brand Identity & Visual Positioning Guide</span>
+                        <p class="deliverable-desc">Brand tone guidelines, visual asset standardization, and hero product positioning (Artisan Almond Biscocho) tailored for digital channels.</p>
+                    </div>
+                    <span class="status-badge pending">Pending</span>
+                </li>
+                <li>
+                    <div class="deliverable-info">
+                        <span class="deliverable-title">Multi-Channel Content & Campaign Playbook</span>
+                        <p class="deliverable-desc">Strategic channel selection (Facebook, Instagram, TikTok), question-backed content pillars, Iloilo pasalubong hashtag systems, and launch assets.</p>
+                    </div>
+                    <span class="status-badge pending">Pending</span>
+                </li>
+                <li>
+                    <div class="deliverable-info">
+                        <span class="deliverable-title">Customer Inquiry Automation & Community Engagement System</span>
+                        <p class="deliverable-desc">Automated Messenger FAQ workflows, direct Lazada order routing, and a structured Member Experience & Feedback loyalty loop.</p>
+                    </div>
+                    <span class="status-badge pending">Pending</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 DICT ILCDB SPARK Program Portfolio Collective. All rights reserved.</p>
+    </footer>
+</body>
+</html>
